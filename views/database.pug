@@ -1,0 +1,38 @@
+extends layout 
+
+block content
+  .pb-2.mt-2.mb-4.border-bottom
+    h3 Data Sheet
+
+  form(method='POST')
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group.row
+      label(class='col-md-12 col-form-label font-weight-bold', for='name') Name
+        .col-md-8
+          input.form-control(type='text', name='name', id='name', autocomplete='name', autofocus, required)
+    .form-group.row
+      label(class='col-md-12 col-form-label font-weight-bold', for='dateOfBirth') Date of Birth
+        .col-md-8
+          input.form-control(type='date', name='dateOfBirth', id='dateOfBirth', autocomplete='dateOfBirth', autofocus, required)
+
+    .form-group.row
+      label(class='col-md-12 col-form-label font-weight-bold', for='occupation') Occupation
+        .col-md-8
+          input.form-control(type='text', name='occupation', id='occupation', autocomplete='occupation', autofocus, required)
+        .form-group.row
+      label(class= 'col-md-4 col-form-label font-weight-bold', for='vaccineName') Name of Vaccine
+        .col-md-8
+          input.form-control(type='text',name ='vaccineName', id ='vaccineName', autocomplete='vaccineName',autofocus,required)
+      
+      label(class= 'col-md-4 col-form-label font-weight-bold', for='vaccineNum') Dose Number
+        .col-md-8
+          input.form-control(type='number',name ='vaccineNum', id ='vaccineNum', autocomplete='vaccineNum',autofocus,required)
+    .form-group.row
+      label(class='col-md-8 col-form-label font-weight-bold', for='email') Email
+        .col-md-8
+          input.form-control(type='email', name='email', id='email', autocomplete='email', required)
+    br
+    .form-group.row 
+    button.btn.btn-primary(type='submit')
+      i.far.fa-envelope.fa-sm
+      | Add to Database

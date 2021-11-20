@@ -29,6 +29,8 @@ dotenv.config({ path: '.env.example' });
  * Controllers (route handlers).
  */
 const homeController = require('./controllers/home');
+const motivationController = require('./controllers/motivation');
+const databaseController = require('./controllers/database');
 const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
@@ -125,6 +127,12 @@ app.use('/webfonts', express.static(path.join(__dirname, 'node_modules/@fortawes
  * Primary app routes.
  */
 app.get('/', homeController.index);
+app.get('/motivation',motivationController.index);
+
+app.get('/database',databaseController.initialize);
+//app.get('/database',databaseController.getQuery);
+app.post('/database',databaseController.postQuery);
+
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
@@ -134,8 +142,10 @@ app.get('/reset/:token', userController.getReset);
 app.post('/reset/:token', userController.postReset);
 app.get('/signup', userController.getSignup);
 app.post('/signup', userController.postSignup);
+
 app.get('/contact', contactController.getContact);
 app.post('/contact', contactController.postContact);
+
 app.get('/account/verify', passportConfig.isAuthenticated, userController.getVerifyEmail);
 app.get('/account/verify/:token', passportConfig.isAuthenticated, userController.getVerifyEmailToken);
 app.get('/account', passportConfig.isAuthenticated, userController.getAccount);
