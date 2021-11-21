@@ -1,29 +1,32 @@
 .navbar.navbar-light.fixed-top.navbar-expand-lg.bg-light
-  .container
+  .container(style='background-color:#ffc145; color:#fff')
     a.navbar-brand(href='/')
-      i.fas.fa-cube
-      | Covid Vaccine App
+      i.fas.fa-calendar-alt
+      | CovWe: A Covid Vaccination Appointment System
     button.navbar-toggler(type='button', data-toggle='collapse', data-target='.navbar-collapse')
       span.sr-only Toggle navigation
       span.navbar-toggler-icon
     .collapse.navbar-collapse
       ul.nav.navbar-nav
-        li.nav-item(class=(title === 'Home') ? 'active' : undefined)
-          a.nav-link(href='/') Home
-        li.nav-item(class=(title === 'Motivation') ? 'active' : undefined)
-          a.nav-link(href='/Motivation') Motivation
+        li.nav-item(class=(title === 'Start Here') ? 'active' : undefined)
+          a.nav-link(href='/') Start Here
+        li.nav-item(class=(title === '??') ? 'active' : undefined)
+          a.nav-link(href='/portal') Portal
+
+
+
         //li.nav-item(class=(title === 'API Examples') ? 'active' : undefined)
           a.nav-link(href='/api') API Examples
         //li.nav-item(class=(title === 'Contact') ? 'active' : undefined)
           a.nav-link(href='/contact') Contact
-      ul.nav.navbar-nav.ml-auto
+      //ul.nav.navbar-nav.ml-auto
         if !user
-          //li.nav-item(class=(title === 'Login') ? 'active' : undefined)
+          li.nav-item(class=(title === 'Login') ? 'active' : undefined)
             a.nav-link(href='/login') Login
-          //li.nav-item(class=(title === 'Create Account') ? 'active' : undefined)
+          li.nav-item(class=(title === 'Create Account') ? 'active' : undefined)
             a.nav-link(href='/signup') Create Account
         else
-          //li.dropdown(class=(title === 'Account Management') ? 'active' : undefined).nav-item
+          li.dropdown(class=(title === 'Account Management') ? 'active' : undefined).nav-item
             a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown')
               if user.profile.picture
                 img(src=user.profile.picture)

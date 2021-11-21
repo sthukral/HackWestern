@@ -1,13 +1,13 @@
 const validator = require('validator');
 
 /**
- * GET /database
- * database form page.
+ * GET /booking
+ * booking form page.
  */
 exports.initialize = (req, res) => {
   //const unknownUser = !(req.user);
-  res.render('database', {
-    title: 'Database',
+  res.render('booking', {
+    title: 'Booking',
     //sitekey: process.env.RECAPTCHA_SITE_KEY,
     //unknownUser,
   });

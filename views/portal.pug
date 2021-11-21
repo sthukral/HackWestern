@@ -3,56 +3,54 @@ extends layout
 block content
   .container
     .jumbotron(style='background-color:#D2D7DF')
-        h1 Getting the Covid Vaccine
-        p.lead Learn when and where you can book an appointment for a COVID-19 vaccine.
+        h1 Employee Portal
+        p.lead Province of Ontario Health Management System
     .row
       .col-md-12 
         .card(style='')
           .card-header(style ='background-color: #412234; color:#fff;text-align:center; font-family:Roboto')
-            h2 Who can get vaccinated
+            h2 Vaccine Clinic Bookings
           .card-body
-            p Anyone born in 2009 or earlier can book an appointment for their first or second dose of the COVID-19vaccine.
-            p You can book a COVID-19 vaccination appointment for:
+            p View the current bookings for the Hamilton Vaccine Clinic.
+            //p You can book a COVID-19 vaccination appointment for:
               li yourself
               li a family member, friend or someone whose medical care and appointments you manage 
             p
-              //a.btn.btn-raised(href='./database', role='button') Connect to Database »
+              a.btn.btn-raised(href='./booked', role='button') View Booked Patients »
+            p 
+                a.btn.btn-raised(href='./database', role='button') Register Walk-in appointment »
     .row       
       .col-md-4
         .card(style='')
           .card-header(style ='background-color: #412234; color:#fff;text-align:center; font-family:Roboto')
-            h2(a href='./database', style ='text-align:center; font-family:Roboto') First Dose
+            h2(a href='./database', style ='text-align:center; font-family:Roboto') Family Physician Login
           .card-body
-            p Vaccines available to youth (ages 12 – 17)
-              li Pfizer
-            p Vaccines available to adults
+            p In an effort to standardize patient-physician interactions, this portal will allow physicians to view patient history with all past physicians.
+            //p Vaccines available to adults
               li Pfizer: recommended for ages 18 – 24 to avoid myocarditis risks
               li Moderna
-
-        //a.btn.btn-raised(href='./database', role='button') Connect to Database »
+            p
+                a.btn.btn-raised(href='./booked', role='button') Connect to Database »
+            
       .col-md-4
         .card(style='')
           .card-header(style ='background-color: #412234; color:#fff;text-align:center; font-family:Roboto')
-            h2(a href='./database', style ='text-align:center; font-family:Roboto') Second Dose
+            h2(a href='./database', style ='text-align:center; font-family:Roboto') Specialty Physician Login
           .card-body 
-            p Vaccines can be safely mixed for a first and second dose.
-            p Your appointment for your second dose should be:
-              li 8-12 weeks after your first dose of AstraZeneca
-              li 8 weeks after your first dose of Moderna or Pfizer
+            p In an effort to refer patients to the closest specialist in their area, this directory includes all referrals for specialty services.
+            p (eg, Podiatrist, Dentist, Opthamologist, etc.)
+            p View directory of specialists according to your location. 
             p
-              //a.btn.btn-raised(href='./database', role='button') Connect to Database »
+              a.btn.btn-raised(href='./database', role='button') View Directory »
             p
       .col-md-4
         .card(style='')
           .card-header(style ='background-color:#412234; color:#fff;text-align:center; font-family:Roboto')
-            h2(a href='./database', style ='text-align:center; font-family:Roboto') Booster Dose 
+            h2(a href='./database', style ='text-align:center; font-family:Roboto') Family Physician Look Up 
           .card-body 
-            p Vaccines can be safely mixed for a first and second dose.
-            p Your appointment for your second dose should be:
-              li 8-12 weeks after your first dose of AstraZeneca
-              li 8 weeks after your first dose of Moderna or Pfizer
+            p In the case that your patients are experiencing a long wait time, please refer them to any other available family physicians in the area.
             p
-              //a.btn.btn-raised(href='./database', role='button') Connect to Database »
+              a.btn.btn-raised(href='./database', role='button') View Directory »
             p
   .jumbotron
     h2 Book Your Appointment

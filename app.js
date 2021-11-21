@@ -29,11 +29,15 @@ dotenv.config({ path: '.env.example' });
  * Controllers (route handlers).
  */
 const homeController = require('./controllers/home');
-const motivationController = require('./controllers/motivation');
+const appointmentsController = require('./controllers/appointments');
 const databaseController = require('./controllers/database');
 const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
+const confirmationController = require('./controllers/confirmation');
+const bookingController =  require('./controllers/booking');
+const portalController =require('./controllers/portal');
+const bookedController =require('./controllers/booked');
 
 /**
  * API keys and Passport configuration.
@@ -126,12 +130,21 @@ app.use('/webfonts', express.static(path.join(__dirname, 'node_modules/@fortawes
 /**
  * Primary app routes.
  */
+ app.get('/booked', bookedController.index);
+
 app.get('/', homeController.index);
-app.get('/motivation',motivationController.index);
+app.get('/portal',portalController.index);
+app.get('/appointments',appointmentsController.index);
+
+app.get('/confirmation',confirmationController.index);
 
 app.get('/database',databaseController.initialize);
 //app.get('/database',databaseController.getQuery);
 app.post('/database',databaseController.postQuery);
+
+app.get('/booking',bookingController.initialize);
+//app.get('/database',databaseController.getQuery);
+app.post('/booking',bookingController.postQuery);
 
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);

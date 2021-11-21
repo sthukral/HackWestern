@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .container 
+    h4 Booked for November 21, 2021
+    br
+    .container
+    .row
+      .col-md-8
+        .card()
+          a.card-header(a href='/booking',style='color:#412234;background-color:#E2E2E2;border-radius:25px;padding-top:10px,padding-bottom:10px;text-align:center; font-family:Roboto')  8:15 a.m 
+          .card-body(style='text-align=center')
+            p Supriya Thukral 
+            p Dose 2 Recieved
+            p
+                a.btn.btn-raised(a href='/appointments', role='button') Check in Patient »
